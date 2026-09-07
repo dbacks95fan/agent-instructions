@@ -1,0 +1,4 @@
+# Local, machine-specific notes that shouldn't be shared
+*.local.md
+.DS_Store
+Thumbs.db
