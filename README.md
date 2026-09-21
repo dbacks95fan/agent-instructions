@@ -12,7 +12,7 @@ their own filenames, so they get a one-line pointer file that imports `AGENTS.md
 
 | Path | What it is |
 |---|---|
-| `AGENTS.md` | **The canonical file.** Tool-agnostic behavior rules, ~145 lines. Copy or import this everywhere. |
+| `AGENTS.md` | **The canonical file.** Tool-agnostic behavior rules, ~150 lines. Copy or import this everywhere. |
 | `addons/personal.md` | Opt-in personal preferences and stricter rules (PowerShell, working relationship, strict TDD, `ABOUTME:` headers, journaling). Import alongside `AGENTS.md` on your own machine. |
 | `pointers/` | Thin per-tool files for the tools that don't read `AGENTS.md`. `CLAUDE.md` and `GEMINI.md` `@import` it; `.github/copilot-instructions.md` needs a copy (no import syntax). |
 | `templates/` | Project-level `AGENTS.md` starters — minimal, Node/TypeScript, Python, and a monorepo package stub. The project layer holds commands and layout; the canonical file holds behavior. |
