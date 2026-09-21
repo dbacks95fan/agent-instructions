@@ -19,4 +19,5 @@
      canonical file. Keep it to things that only apply to Claude Code. -->
 
 - Before editing under paths you were told are sensitive, use plan mode and get sign-off.
-- When a factual answer is needed, use web search to verify rather than answering froms memory.
+- When a factual answer is needed, use web search to verify rather than answering from
+  memory.
