@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.1 — 2026-09-07
+
+- `AGENTS.md` §6 Version control: all code changes happen on a branch created before the
+  first edit, never a direct commit to `main`, with branch names that name the change.
+  §2 points at it, since that is the section read before editing starts.
+
 ## v0.1.0 — 2026-09-06
 
 Initial version.
