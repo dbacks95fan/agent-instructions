@@ -54,7 +54,8 @@ settings.
 
 - **Important:** every code change happens on a branch. Create it before the first edit —  `git switch -c <branch>` — and never commit to `main` (or `master`) directly. If you already edited on `main`, branch from where you are before committing.
 - Name the branch for the change it carries: `fix/login-redirect-loop`, `feat/csv-export`, `docs/branch-policy`. No `wip`, `patch-1`, `temp`, or dated names.
-- One branch per logical change, started from an up-to-date default branch. Unrelated work gets its own branch.
+- One branch per logical change, started from an up-to-date default branch. Unrelated work gets its own branch. If you're already on the branch for this change, keep using it.
+- **Important:** commit your work to the branch and push the branch to GitHub — `git push -u origin <branch>` the first time, `git push` after. Work that exists only in your working tree or on your machine isn't done. This push is pre-approved; pushing to `main` or force-pushing still needs approval (§7).
 - Write commit messages that say what changed and why.
 - **Important:** never bypass hooks or checks — no `--no-verify`, no skipped CI, no disabled pre-commit.
 - One logical change per commit. No drive-by reformatting.

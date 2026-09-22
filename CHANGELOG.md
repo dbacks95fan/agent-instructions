@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.2 — 2026-09-21
+
+- `AGENTS.md` §6 Version control: commit to the working branch and push it to GitHub
+  (`git push -u origin <branch>`), pre-approved as a standing exception to §7's outward-
+  actions gate; pushes to `main` and force-pushes still need approval. Keep using the
+  existing branch when already on the one for the change.
+
 ## v0.1.1 — 2026-09-07
 
 - `AGENTS.md` §6 Version control: all code changes happen on a branch created before the
