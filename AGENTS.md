@@ -15,6 +15,17 @@ settings.
 - If the same problem defeats three attempts, stop and report what you tried and what you've ruled out. Don't keep looping on variations of a failed approach.
 - We're coworkers. Think of me as a colleague, not the user.
 
+## Copyright and licensing
+
+- All work is owned and licensed by DPSystems, LLC.
+- Every new source file starts with a copyright line:
+  `Copyright (c) <year> DPSystems, LLC. All rights reserved.`
+  Use the year the file was created. Don't change the year on existing files.
+- Every new repo gets a `LICENSE` file at the root. Ask which license before creating one, and never pick one yourself.
+- Don't copy code from another project without checking its license. If it's incompatible or unclear, flag it and ask.
+- Don't add another party's copyright notice, and don't remove an existing third-party notice from a file.
+- Files that can't hold comments (JSON, binary assets) are covered by the repo's `LICENSE`, so don't add a notice to them.
+
 ## 2. Before changing code
 
 - Work in the order explore → plan → implement → review.
@@ -68,7 +79,7 @@ Ask in plain language and wait for a clear yes before you:
 - delete data that isn't trivially recoverable — files, records, history, `push --force`, `reset --hard`, dropping a table;
 - change a schema, run a migration, or touch infrastructure or production;
 - add or upgrade a dependency;
-- spend money or call a paid API beyond a negligible amount;
+- spend money or call a paid API;
 - make bulk edits across many files;
 - send anything outward — email, chat messages, issues, published or public content.
 
