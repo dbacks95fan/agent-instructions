@@ -1,7 +1,7 @@
 # AGENTS.md
 
 Base behavior rules for AI coding agents (Claude Code, Codex, Gemini CLI, Copilot, Cursor, and others). Tool-agnostic: it describes *how* an agent should work, not the commands for any one project. A repo adds its own commands, layout, and gotchas either by extending
-this file or by keeping a project `AGENTS.md` alongside it (see `templates/`).
+this file or by keeping a project `AGENTS.md` alongside it.
 
 **Precedence:** an instruction given directly in chat overrides this file. When several instruction files apply, the one nearest the code being edited wins. This file guides behavior; it does not enforce it — hard guarantees belong in hooks, CI, and permission
 settings.

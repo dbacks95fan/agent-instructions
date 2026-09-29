@@ -106,7 +106,7 @@ Guidance this repo is built on. Checked September 2026.
     logs / signatures.
 - Simon Willison, "Agentic Coding" — <https://simonwillison.net/2025/Jun/29/agentic-coding/>
   - Unified logging so the agent can monitor its own runs and recover from errors
-    (project-level; noted in `templates/`).
+    (project-level; belongs in a project's own instructions, not this file).
 - Aider, "Specifying coding conventions" —
   <https://aider.chat/docs/usage/conventions.html>
   - Keep the conventions file under ~150–200 lines or rules get forgotten.

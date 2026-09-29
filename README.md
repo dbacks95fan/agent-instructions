@@ -18,7 +18,6 @@ their own filenames, so they get a one-line pointer file that imports `AGENTS.md
 | `AGENTS.md` | **The canonical file.** Tool-agnostic behavior rules, ~150 lines. Copy or import this everywhere. |
 | `addons/personal.md` | Opt-in personal preferences and stricter rules (PowerShell, working relationship, strict TDD, `ABOUTME:` headers, journaling). Import alongside `AGENTS.md` on your own machine. |
 | `pointers/` | Thin per-tool files for the tools that don't read `AGENTS.md`. `CLAUDE.md` and `GEMINI.md` `@import` it; `.github/copilot-instructions.md` needs a copy (no import syntax). |
-| `templates/` | Project-level `AGENTS.md` starters — minimal, Node/TypeScript, Python, and a monorepo package stub. The project layer holds commands and layout; the canonical file holds behavior. |
 | `docs/sources.md` | The Anthropic / OpenAI / Google / GitHub guidance this is built on. |
 | `install.ps1` | Copies `AGENTS.md` + the right pointer into a target directory. |
 
@@ -27,8 +26,8 @@ their own filenames, so they get a one-line pointer file that imports `AGENTS.md
 1. **Behavior** — `AGENTS.md` in this repo. How the agent works: plan first, verify before
    claiming done, don't rewrite working code, ask before destructive actions. Same for
    every project.
-2. **Project** — a repo-root `AGENTS.md` from `templates/`. Commands, directory layout,
-   what not to touch, this project's "done when". Different per repo.
+2. **Project** — written per repo: commands, directory layout, what not to touch, this
+   project's "done when". Different per repo.
 
 Combine them per repo one of two ways:
 
