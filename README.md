@@ -1,7 +1,10 @@
 # agent-instructions
 
-One canonical set of behavior rules for AI coding agents — Claude Code, Codex, Gemini CLI,
-Copilot, Cursor, and others — kept in version control and wired into each tool.
+DPSystems, LLC's canonical behavior rules for AI coding agents — Claude Code, Codex,
+Gemini CLI, Copilot, Cursor, and others — kept in version control and wired into each
+tool. The rules are DPSystems-specific (ownership, copyright headers, license defaults);
+fork and edit them rather than installing them as-is elsewhere. Licensed under MIT (see
+`LICENSE`).
 
 The canonical file is named **`AGENTS.md`**, the [open cross-tool standard](https://agents.md/).
 Codex, Cursor, Zed, JetBrains Junie, current VS Code Copilot, Aider, and ~20 other tools

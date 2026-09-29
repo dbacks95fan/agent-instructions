@@ -123,7 +123,7 @@ Guidance this repo is built on. Checked September 2026.
     call such work done.
 - 12-factor-agents (HumanLayer) — <https://github.com/humanlayer/12-factor-agents>
   - Context efficiency: past ~40% of the window, signal-to-noise degrades ("dumb zone").
-    The file-actionable takeaway is "keep this file short" (§9).
+    The file-actionable takeaway is "keep this file short" (§10).
 - Thoughtworks, "Beyond vibe coding" / Looking Glass 2026 —
   <https://www.thoughtworks.com/insights/blog/generative-ai/beyond-vibe-coding-the-five-building-blocks-of-aI-native-engineering>
   - The scaffolding around an agent (context, deterministic guardrails, skills, feedback
