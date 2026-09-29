@@ -1,3 +1,4 @@
 # Normalize line endings: these files get copied onto macOS/Linux machines too.
 * text=auto eol=lf
 *.ps1 text eol=crlf
+*.psd1 text eol=crlf
