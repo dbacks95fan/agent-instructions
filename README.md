@@ -76,4 +76,22 @@ For your own machine, import the files straight from this checkout instead of co
 
 # Global install for Claude Code (~/.claude/)
 .\install.ps1 -Global -Tools claude
+
+# Show the target folder and the drift reminder too
+.\install.ps1 -Target C:\repos\my-project -Tools claude -Verbose
+```
+
+The script outputs one object per file, with `Tool`, `Action` (`Wrote`, `Skipped`, or `AlreadyWritten`), and `Path`, so the result can be piped or filtered. A file that already exists is skipped with a warning unless you pass `-Force`.
+
+## Development
+
+`install.ps1` has Pester tests (unit, integration, and end-to-end) and is linted with PSScriptAnalyzer using `PSScriptAnalyzerSettings.psd1`: the default rules plus the OTBS formatting preset. Both must be clean before a change is done.
+
+```powershell
+# Tests (Pester 5 or later)
+Invoke-Pester -Path .\tests -Output Detailed
+
+# Lint and format check, one file at a time
+Invoke-ScriptAnalyzer -Path .\install.ps1 -Settings .\PSScriptAnalyzerSettings.psd1
+Invoke-Formatter -ScriptDefinition (Get-Content .\install.ps1 -Raw) -Settings .\PSScriptAnalyzerSettings.psd1
 ```

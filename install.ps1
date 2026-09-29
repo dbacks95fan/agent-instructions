@@ -42,14 +42,14 @@ function Get-Plan {
             $dir = if ($IsGlobal) { Join-Path $HOME '.claude' } else { $Root }
             @(
                 @{ Src = Join-Path $repo 'pointers\CLAUDE.md'; Dst = Join-Path $dir 'CLAUDE.md' }
-                @{ Src = $canonical;                            Dst = Join-Path $dir 'AGENTS.md' }
+                @{ Src = $canonical; Dst = Join-Path $dir 'AGENTS.md' }
             )
         }
         'gemini' {
             $dir = if ($IsGlobal) { Join-Path $HOME '.gemini' } else { $Root }
             @(
                 @{ Src = Join-Path $repo 'pointers\GEMINI.md'; Dst = Join-Path $dir 'GEMINI.md' }
-                @{ Src = $canonical;                            Dst = Join-Path $dir 'AGENTS.md' }
+                @{ Src = $canonical; Dst = Join-Path $dir 'AGENTS.md' }
             )
         }
         'codex' {
@@ -63,23 +63,23 @@ function Get-Plan {
     }
 }
 
-$isGlobal = $PSCmdlet.ParameterSetName -eq 'Global'
+$isGlobal = $Global.IsPresent
 if (-not $isGlobal) {
     $Target = (Resolve-Path $Target).Path
-    Write-Host "Target project: $Target"
+    Write-Verbose "Target project: $Target"
 } else {
-    Write-Host "Target: global tool config under $HOME"
+    Write-Verbose "Target: global tool config under $HOME"
 }
 
 # Track destinations already written this run so overlapping tool plans (e.g. claude and
 # codex both wanting AGENTS.md at the repo root) don't warn about a file we just created.
 $written = @{}
 
+# Emit one result per planned file so callers can pipe, filter, or assert on the outcome.
 foreach ($tool in $Tools) {
-    Write-Host "`n[$tool]"
     foreach ($item in Get-Plan -Tool $tool -Root $Target -IsGlobal $isGlobal) {
         if ($written.ContainsKey($item.Dst)) {
-            Write-Host "  already written this run: $($item.Dst)"
+            [pscustomobject]@{ Tool = $tool; Action = 'AlreadyWritten'; Path = $item.Dst }
             continue
         }
         $dstDir = Split-Path $item.Dst -Parent
@@ -87,13 +87,14 @@ foreach ($tool in $Tools) {
             New-Item -ItemType Directory -Path $dstDir -Force | Out-Null
         }
         if ((Test-Path $item.Dst) -and -not $Force) {
-            Write-Warning "  exists, skipping (use -Force): $($item.Dst)"
+            Write-Warning "exists, skipping (use -Force): $($item.Dst)"
+            [pscustomobject]@{ Tool = $tool; Action = 'Skipped'; Path = $item.Dst }
             continue
         }
         Copy-Item -Path $item.Src -Destination $item.Dst -Force
         $written[$item.Dst] = $true
-        Write-Host "  wrote $($item.Dst)"
+        [pscustomobject]@{ Tool = $tool; Action = 'Wrote'; Path = $item.Dst }
     }
 }
 
-Write-Host "`nDone. Re-run after editing AGENTS.md so full copies (codex/copilot) don't drift."
+Write-Verbose "Done. Re-run after editing AGENTS.md so full copies (codex/copilot) don't drift."

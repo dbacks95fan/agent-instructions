@@ -12,6 +12,8 @@
 - `addons/personal.md`: dropped the `social.md` status-update requirement.
 - `addons/personal.md` House style: prose files (Markdown, plain text, `LICENSE`) use one line per paragraph or list item and soft-wrap; the rule never applies to code or code-related files (source, scripts, XML, JSON, YAML, config).
 - `AGENTS.md` §3: new Linting and formatting rule for every non-prose file — the project's own tools first, otherwise a named default formatter and linter per file type; zero findings on new files and touched lines; no silencing findings without a provable reason; adding a tool needs approval (§7).
+- `install.ps1` passes PSScriptAnalyzer's default rules and OTBS formatting (`PSScriptAnalyzerSettings.psd1`). Instead of `Write-Host` text it now outputs one object per file (`Tool`, `Action`: `Wrote` / `Skipped` / `AlreadyWritten`, `Path`); the target folder and drift reminder moved to `-Verbose`; skipped files still warn.
+- `tests/install.Tests.ps1`: Pester unit, integration, and end-to-end tests for `install.ps1`, including `-Global` against a redirected home folder.
 
 ## v0.1.3 — 2026-09-25
 
