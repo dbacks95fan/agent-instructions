@@ -2,7 +2,7 @@
 
 ## v0.2.1 — 2026-09-29
 
-- `AGENTS.md` §5: agents end every task with a plain-language summary a 15-year-old could follow — what changed, what was checked, and what's still open — placed before any evidence or technical detail.
+- `AGENTS.md` §5: agents end every task with a plain-language summary a 15-year-old could follow — what changed, what was checked, and what's still open — always followed by the proof (commands run and their output).
 
 ## v0.2.0 — 2026-09-29
 
