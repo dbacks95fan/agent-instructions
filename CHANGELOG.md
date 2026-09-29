@@ -1,5 +1,32 @@
 # Changelog
 
+## v0.2.0 — 2026-09-29
+
+- `LICENSE`: the repo is now MIT-licensed. `AGENTS.md` §9 makes MIT the default license
+  for new work and has agents offer it as the default when asking which license a new
+  repo gets.
+- `AGENTS.md`: the copyright section is now numbered §9 (Maintaining moves to §10) and
+  says the copyright line comes first, then the purpose comment. The copyright line drops
+  "All rights reserved", which contradicts an MIT grant.
+- `AGENTS.md`: dropped the personal "think of me as a colleague" line (it lives in
+  `addons/personal.md`); precedence wording no longer implies files replace each other;
+  rewrapped to ~90 columns after the v0.1.1 edit unwrapped it.
+- README states the rules are DPSystems-specific.
+- Tool wiring brought up to date: Claude Code reads `AGENTS.md` natively (v2.1.277+)
+  when a project has no `CLAUDE.md`; Gemini CLI's setting is `context.fileName`; Copilot
+  CLI reads `AGENTS.md` and a user-level file, while several Copilot surfaces still read
+  only `.github/copilot-instructions.md`. README documents importing straight from this
+  checkout for a global setup.
+- Removed leftover references to the deleted `templates/`.
+
+## v0.1.3 — 2026-09-25
+
+- `AGENTS.md`: added a Copyright and licensing section — DPSystems, LLC ownership, a
+  copyright line on new source files, a `LICENSE` in every new repo, and rules against
+  copying unlicensed code or stripping third-party notices.
+- `AGENTS.md` §7: removed the "beyond a negligible amount" exception from the paid-API
+  approval rule.
+
 ## v0.1.2 — 2026-09-21
 
 - `AGENTS.md` §6 Version control: commit to the working branch and push it to GitHub
@@ -7,11 +34,12 @@
   actions gate; pushes to `main` and force-pushes still need approval. Keep using the
   existing branch when already on the one for the change.
 
-## v0.1.1 — 2026-09-07
+## v0.1.1 — 2026-09-20
 
 - `AGENTS.md` §6 Version control: all code changes happen on a branch created before the
   first edit, never a direct commit to `main`, with branch names that name the change.
   §2 points at it, since that is the section read before editing starts.
+- Removed the `templates/` project starters.
 
 ## v0.1.0 — 2026-09-06
 
