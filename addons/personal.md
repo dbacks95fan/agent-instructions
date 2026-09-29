@@ -26,6 +26,8 @@ Opt-in. Import or append this alongside `AGENTS.md` on my own machines and proje
 ## House style
 
 - Every source file starts with a purpose comment where each line begins with `ABOUTME: ` — so the intent of any file is greppable.
+- In prose files (Markdown, plain text, `LICENSE`), put each paragraph or list item on one line and let the editor soft-wrap. Never hard-wrap them at a fixed column, and don't "fix" long lines by wrapping them.
+- The no-wrap rule never applies to code or code-related files — source, scripts, XML, JSON, YAML, config — including their comments. Follow the file's existing formatting there.
 
 ## Journaling
 

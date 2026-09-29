@@ -10,6 +10,7 @@
 - Tool wiring brought up to date: Claude Code reads `AGENTS.md` natively (v2.1.277+) when a project has no `CLAUDE.md`; Gemini CLI's setting is `context.fileName`; Copilot CLI reads `AGENTS.md` and a user-level file, while several Copilot surfaces still read only `.github/copilot-instructions.md`. README documents importing straight from this checkout for a global setup.
 - Removed leftover references to the deleted `templates/`.
 - `addons/personal.md`: dropped the `social.md` status-update requirement.
+- `addons/personal.md` House style: prose files (Markdown, plain text, `LICENSE`) use one line per paragraph or list item and soft-wrap; the rule never applies to code or code-related files (source, scripts, XML, JSON, YAML, config).
 
 ## v0.1.3 — 2026-09-25
 

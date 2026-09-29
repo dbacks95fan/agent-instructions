@@ -1,4 +1,6 @@
-# ABOUTME: Copies the canonical AGENTS.md and any per-tool pointer file into a target project directory (or the global tool config dirs), so an agent picks up the canonical rules without hand-copying files each time.
+# ABOUTME: Copies the canonical AGENTS.md and any per-tool pointer file into a target
+# ABOUTME: project directory (or the global tool config dirs), so an agent picks up the
+# ABOUTME: canonical rules without hand-copying files each time.
 
 [CmdletBinding(DefaultParameterSetName = 'Project')]
 param(
@@ -28,8 +30,10 @@ if (-not (Test-Path $canonical)) {
 }
 
 # Resolve where each tool's files go.
-#  - codex/copilot read AGENTS.md-style files directly and have no import syntax, so the canonical content is copied in full.
-#  - claude/gemini read their own filename; they get a pointer file plus a copy of AGENTS.md beside it so the pointer's @import resolves.
+#  - codex/copilot read AGENTS.md-style files directly and have no import syntax, so the
+#    canonical content is copied in full.
+#  - claude/gemini read their own filename; they get a pointer file plus a copy of
+#    AGENTS.md beside it so the pointer's @import resolves.
 function Get-Plan {
     param([string]$Tool, [string]$Root, [bool]$IsGlobal)
 
@@ -38,14 +42,14 @@ function Get-Plan {
             $dir = if ($IsGlobal) { Join-Path $HOME '.claude' } else { $Root }
             @(
                 @{ Src = Join-Path $repo 'pointers\CLAUDE.md'; Dst = Join-Path $dir 'CLAUDE.md' }
-                @{ Src = $canonical; Dst = Join-Path $dir 'AGENTS.md' }
+                @{ Src = $canonical;                            Dst = Join-Path $dir 'AGENTS.md' }
             )
         }
         'gemini' {
             $dir = if ($IsGlobal) { Join-Path $HOME '.gemini' } else { $Root }
             @(
                 @{ Src = Join-Path $repo 'pointers\GEMINI.md'; Dst = Join-Path $dir 'GEMINI.md' }
-                @{ Src = $canonical; Dst = Join-Path $dir 'AGENTS.md' }
+                @{ Src = $canonical;                            Dst = Join-Path $dir 'AGENTS.md' }
             )
         }
         'codex' {
@@ -67,7 +71,8 @@ if (-not $isGlobal) {
     Write-Host "Target: global tool config under $HOME"
 }
 
-# Track destinations already written this run so overlapping tool plans (e.g. claude and codex both wanting AGENTS.md at the repo root) don't warn about a file we just created.
+# Track destinations already written this run so overlapping tool plans (e.g. claude and
+# codex both wanting AGENTS.md at the repo root) don't warn about a file we just created.
 $written = @{}
 
 foreach ($tool in $Tools) {
