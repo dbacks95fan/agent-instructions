@@ -31,6 +31,38 @@ Base behavior rules for AI coding agents (Claude Code, Codex, Gemini CLI, Copilo
 - Comments explain *why*, not *what*. Keep them evergreen — no references to refactors or "recent" changes. Don't delete a comment unless you can show it is now false.
 - Start each new source file with a comment stating its purpose, directly after the copyright line (§9).
 
+**Linting and formatting**
+
+Applies to every file that isn't prose — source code, scripts, JSON, XML, YAML, TOML, config, build and CI files. Prose (Markdown, plain text, `LICENSE`) is exempt.
+
+- Use the project's configured formatter and linter first. If it has none, use the default for the file type below with the tool's recommended rule set.
+- Adding a tool or its config to a project is a new dependency: ask first (§7). If it isn't approved, say the file wasn't linted — don't claim it was.
+- New files: formatted, and zero lint errors or warnings.
+- Changed files: zero findings on the lines you touched, and no new findings anywhere. Don't reformat untouched code in the same commit; do that as its own commit, if at all.
+- Before calling work done, run the formatter in check mode and the linter on changed files, and show the command and output (§5).
+- Don't silence a finding by editing linter config or adding an inline suppression (`# noqa`, `eslint-disable`, `SuppressMessage`), unless the finding is provably wrong. Then suppress that one finding only, with a comment saying why.
+
+| File type | Formatter | Linter |
+|---|---|---|
+| Python | `ruff format` | `ruff check` |
+| JavaScript / TypeScript | Prettier | ESLint (recommended config); `tsc --noEmit` for TypeScript |
+| PowerShell | `Invoke-Formatter` (PSScriptAnalyzer) | `Invoke-ScriptAnalyzer` |
+| Shell (sh / bash) | `shfmt` | ShellCheck |
+| C# / .NET | `dotnet format` | .NET analyzers, built with warnings as errors |
+| Go | `gofmt` | `go vet`, staticcheck |
+| Rust | `rustfmt` | Clippy |
+| JSON | Prettier | Must parse; validate against its JSON Schema when one exists |
+| XML | `xmllint --format` | `xmllint --noout`; add `--schema` when an XSD exists |
+| YAML | Prettier | yamllint |
+| TOML | `taplo fmt` | `taplo lint` |
+| HTML / CSS | Prettier | stylelint (CSS) |
+| Dockerfile | — | hadolint |
+| GitHub Actions workflows | — | actionlint |
+| SQL | `sqlfluff format` | `sqlfluff lint` |
+| Terraform | `terraform fmt` | TFLint |
+
+For a type not listed, use its official or most widely used formatter and linter. If there's no clear standard, ask.
+
 ## 4. Testing
 
 - Every behavior change ships with tests that exercise it, including the edge and failure cases it is meant to handle.
