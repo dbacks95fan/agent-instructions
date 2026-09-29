@@ -24,8 +24,11 @@ Guidance this repo is built on. Checked September 2026.
 - How Claude remembers your project (memory / CLAUDE.md) —
   <https://code.claude.com/docs/en/memory>
   - Memory files are advisory context, not enforcement. Hard rules → PreToolUse hooks.
-  - Claude Code reads `CLAUDE.md`, not `AGENTS.md`; bridge with `@AGENTS.md` import or a
-    symlink (`@import` on Windows since symlinks need admin/Developer Mode).
+  - Claude Code v2.1.277+ reads `AGENTS.md` directly, but by default only when no project
+    `CLAUDE.md` / `CLAUDE.local.md` exists (`~/.claude/CLAUDE.md` doesn't count). Otherwise
+    bridge with an `@AGENTS.md` import, which never double-loads, or a symlink (`@import`
+    on Windows since symlinks need admin/Developer Mode).
+  - Block-level HTML comments in `CLAUDE.md` are stripped before loading.
   - `@path` imports load at launch and still cost context.
 
 ## OpenAI
@@ -43,12 +46,12 @@ Guidance this repo is built on. Checked September 2026.
 ## Google
 
 - Gemini CLI — GEMINI.md context files —
-  <https://google-gemini.github.io/gemini-cli/docs/cli/gemini-md.html>
+  <https://geminicli.com/docs/cli/gemini-md/>
   - Hierarchical: global `~/.gemini/GEMINI.md`, project, and subdirectory files.
   - Old instructions are worse than missing ones — they look authoritative. Keep updated.
   - "Use 2 spaces for indentation" beats "follow good practices." Headings + bullets +
     short snippets parse most reliably. Run `/memory refresh` after edits.
-  - Configurable filename via `contextFileName` in `.gemini/settings.json`.
+  - Configurable filenames via `context.fileName` (a list) in `.gemini/settings.json`.
 
 ## GitHub / Microsoft
 
@@ -61,6 +64,13 @@ Guidance this repo is built on. Checked September 2026.
   - Treat the file like code — update it in the same PR as the convention change.
   - GitHub's review of 2,500+ `AGENTS.md` files: the single biggest failure mode is
     vagueness.
+- Which Copilot surface reads which file —
+  <https://docs.github.com/en/copilot/reference/custom-instructions-support> and
+  Copilot CLI instructions —
+  <https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-custom-instructions>
+  - `.github/copilot-instructions.md` is read everywhere; `AGENTS.md` only by the CLI,
+    cloud agent, VS Code chat, and github.com code review.
+  - Copilot CLI also reads `CLAUDE.md`, `GEMINI.md`, and `~/.copilot/copilot-instructions.md`.
 
 ## Agent failure analyses
 

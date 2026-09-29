@@ -8,7 +8,7 @@
      global use) and keep the import below. Run `/memory refresh` after edits.
 
   2. No pointer: in .gemini/settings.json set
-        { "contextFileName": "AGENTS.md" }
+        { "context": { "fileName": ["AGENTS.md", "GEMINI.md"] } }
      and Gemini CLI will load AGENTS.md directly. Delete this file if you do that.
 
   Import paths resolve relative to this file's location.
