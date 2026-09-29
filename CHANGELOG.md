@@ -18,6 +18,7 @@
   only `.github/copilot-instructions.md`. README documents importing straight from this
   checkout for a global setup.
 - Removed leftover references to the deleted `templates/`.
+- `addons/personal.md`: dropped the `social.md` status-update requirement.
 
 ## v0.1.3 — 2026-09-25
 

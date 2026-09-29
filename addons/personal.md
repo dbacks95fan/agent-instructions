@@ -37,12 +37,10 @@ Everything here was carried over from the original global `CLAUDE.md`.
 - Every source file starts with a purpose comment where each line begins with
   `ABOUTME: ` — so the intent of any file is greppable.
 
-## Journaling and status
+## Journaling
 
 - Keep a dated journal in the project's home directory documenting decisions, blockers,
   and frustrations as they come up.
-- Keep a dated `social.md` in the project folder. Write short status updates to it
-  frequently as you work, and read earlier entries back for context.
 
 ## New projects
 
