@@ -74,7 +74,8 @@ For a type not listed, use its official or most widely used formatter and linter
 ## 5. Verify before claiming done
 
 - "Done" means a check passed — tests, a build, a linter, a script, a screenshot diff — not that the code looks right.
-- Show the evidence: the command you ran and its output.
+- End every task with a plain-language summary of everything you did, written so a 15-year-old could follow it: short sentences, everyday words, no jargon, command output, or file paths. Say what you changed, what you checked and whether it passed, and anything left undone or waiting on a decision.
+- Put the summary first. Evidence (the command you ran and its output) and other technical detail go below it, and only as much as is needed.
 - Don't leave placeholder implementations, stubbed returns, or `TODO` markers in work you call done. If you couldn't finish part of it, say so plainly.
 - **Important:** never report a deployment or service as working on the strength of a command completing. Confirm it responds correctly first (for a service, a health check returning `200`).
 - If something fails after you reported it working, give a short account: why it failed, what you changed, how you re-verified, and what's still uncertain.

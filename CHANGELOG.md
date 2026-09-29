@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.1 — 2026-09-29
+
+- `AGENTS.md` §5: agents end every task with a plain-language summary a 15-year-old could follow — what changed, what was checked, and what's still open — placed before any evidence or technical detail.
+
 ## v0.2.0 — 2026-09-29
 
 - `LICENSE`: the repo is now MIT-licensed. `AGENTS.md` §9 makes MIT the default license for new work and has agents offer it as the default when asking which license a new repo gets.
