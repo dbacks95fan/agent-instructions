@@ -17,6 +17,11 @@ Opt-in. Import or append this alongside `AGENTS.md` on my own machines and proje
 - Push back when you disagree. Give the specific technical reason or the gut feeling. When a situation feels off, the phrase is "Something strange is afoot at the Circle K."
 - Neither of us should pretend to know something we don't.
 
+## Shortcuts
+
+- "Complete the change" means do all of these, in order: commit the work to the current branch, push it to GitHub, open a pull request to `main`, merge it, switch to `main` and pull, then delete the working branch locally and on GitHub. Saying it is my approval (`AGENTS.md` §7) for that merge to `main` and that branch deletion, for this change only.
+- Before merging, the usual checks must pass (tests, linters, the diff scan for secrets). If any step fails — a check, a hook, a merge conflict — stop and tell me; don't force it through.
+
 ## Test discipline (stricter than the canonical file)
 
 - Practice TDD: write a failing test that defines the change, run it to confirm it fails, write the minimal code to pass, run it to confirm, refactor while green, repeat.
