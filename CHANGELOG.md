@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.1 — 2026-09-29
+
+- `AGENTS.md` §5: agents end every task with a plain-language summary a 15-year-old could follow — what changed, what was checked, and what's still open — always followed by the proof (commands run and their output).
+- `addons/personal.md` Shortcuts: "complete the change" means commit, push, open a PR, merge it to `main`, pull `main` locally, and delete the working branch; saying it approves that merge and deletion.
+
 ## v0.2.0 — 2026-09-29
 
 - `LICENSE`: the repo is now MIT-licensed. `AGENTS.md` §9 makes MIT the default license for new work and has agents offer it as the default when asking which license a new repo gets.
