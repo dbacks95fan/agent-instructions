@@ -17,7 +17,7 @@ file imports `AGENTS.md`.
 
 | Path | What it is |
 |---|---|
-| `AGENTS.md` | **The canonical file.** Tool-agnostic behavior rules, ~150 lines. Copy or import this everywhere. |
+| `AGENTS.md` | **The canonical file.** Tool-agnostic behavior rules, kept under 200 lines. Copy or import this everywhere. |
 | `addons/personal.md` | Opt-in personal preferences and stricter rules (PowerShell, working relationship, strict TDD, `ABOUTME:` headers, journaling). Import alongside `AGENTS.md` on your own machine. |
 | `pointers/` | Thin per-tool files for tools, or tool surfaces, that don't read `AGENTS.md` on their own. `CLAUDE.md` and `GEMINI.md` `@import` it; `.github/copilot-instructions.md` needs a full copy, because most Copilot surfaces don't follow imports. |
 | `docs/sources.md` | The Anthropic / OpenAI / Google / GitHub guidance this is built on. |
@@ -69,8 +69,11 @@ them, so there is nothing to drift. In `~/.claude/CLAUDE.md`:
 ### Precedence, everywhere
 
 1. An instruction typed in chat wins.
-2. The instruction file nearest the edited file wins over ones higher up (nested
-   `AGENTS.md` in a monorepo package overrides the root).
+2. The instruction file nearest the edited file takes precedence over ones higher up
+   (nested `AGENTS.md` in a monorepo package over the root). Most tools load every file
+   together rather than replacing one with another — Claude Code, for one, concatenates
+   them and may follow either side of a conflict — so remove conflicts instead of relying
+   on this.
 3. These files **guide** behavior. They don't enforce it. For a hard guarantee use a hook
    (Claude Code `PreToolUse`), a CI check, or permission settings.
 
