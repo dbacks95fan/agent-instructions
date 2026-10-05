@@ -10,6 +10,7 @@ The canonical file is named **`AGENTS.md`**, the [open cross-tool standard](http
 |---|---|
 | `AGENTS.md` | **The canonical file.** Tool-agnostic behavior rules, kept under 200 lines. Copy or import this everywhere. |
 | `addons/personal.md` | Opt-in personal preferences and stricter rules (PowerShell, working relationship, strict TDD, `ABOUTME:` headers, journaling). Import alongside `AGENTS.md` on your own machine. |
+| `chat/general.md` | Default behavior for chat assistants (ChatGPT, Claude, Gemini, Copilot chat) used for research, writing, analysis, and other non-coding work. Separate from `AGENTS.md`; paste it into the assistant's custom instructions or project instructions. Not installed by `install.ps1`. |
 | `pointers/` | Thin per-tool files for tools, or tool surfaces, that don't read `AGENTS.md` on their own. `CLAUDE.md` and `GEMINI.md` `@import` it; `.github/copilot-instructions.md` needs a full copy, because most Copilot surfaces don't follow imports. |
 | `docs/sources.md` | The Anthropic / OpenAI / Google / GitHub guidance this is built on. |
 | `install.ps1` | Copies `AGENTS.md` + the right pointer into a target directory. |
