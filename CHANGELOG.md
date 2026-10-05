@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.1 — 2026-10-05
+
+- `chat/general.md` trimmed from 5,381 to 4,917 characters so it fits ChatGPT's 5,000-character custom instructions box: removed the title and section numbers, sentences repeated elsewhere in the file, and some examples from lists. No rules removed.
+
 ## v0.3.0 — 2026-10-05
 
 - `chat/general.md`: new provider-agnostic instructions for chat assistants doing non-coding work — accuracy over agreeableness, a required web search before answering factual or current-data questions, flagging knowledge past the training cutoff, separating fact from inference and assumption, never inventing sources, quotes, or statistics, and AP style with the Oxford comma and no em dashes.
