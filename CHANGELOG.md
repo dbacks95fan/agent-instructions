@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.3.0 — 2026-10-05
+
+- `chat/general.md`: new provider-agnostic instructions for chat assistants doing non-coding work — accuracy over agreeableness, a required web search before answering factual or current-data questions, flagging knowledge past the training cutoff, separating fact from inference and assumption, never inventing sources, quotes, or statistics, and AP style with the Oxford comma and no em dashes.
+- README lists `chat/general.md`.
+
 ## v0.2.1 — 2026-09-29
 
 - `AGENTS.md` §5: agents end every task with a plain-language summary a 15-year-old could follow — what changed, what was checked, and what's still open — always followed by the proof (commands run and their output).
