@@ -3,6 +3,7 @@
 ## v0.3.0 — 2026-10-05
 
 - `chat/general.md`: new provider-agnostic instructions for chat assistants doing non-coding work — accuracy over agreeableness, verifying current facts, flagging uncertainty and inference, never inventing sources, quotes, or statistics, stopping after three failed attempts, and AP style with the Oxford comma.
+- `chat/general.md`: searching the web before answering any question that needs facts or current data is required, not optional; adds "I don't have reliable information on this," a flag for anything past the model's training cutoff, and announcing a search when up-to-date data is needed.
 - README lists `chat/general.md`.
 
 ## v0.2.1 — 2026-09-29
