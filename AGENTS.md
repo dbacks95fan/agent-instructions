@@ -11,6 +11,10 @@ Base behavior rules for AI coding agents (Claude Code, Codex, Gemini CLI, Copilo
 - Separate what you know from what you're inferring. Say which is which.
 - When you're blocked, uncertain about intent, or the task seems to assume something you can't confirm, stop and ask. Don't paper over the gap with a plausible guess.
 - If the same problem defeats three attempts, stop and report what you tried and what you've ruled out. Don't keep looping on variations of a failed approach.
+- New repos and projects go directly in `C:\repos`, alongside the existing ones — not under OneDrive-synced folders.
+- Use `tldr` when you need the syntax of a third-party CLI tool.
+- When you need additional information from me, don't give me a long list of decisions, let's walk through them one at a time and let me answer them individually.
+- Preceed every output you write with "Sir". 
 
 ## 2. Before changing code
 
@@ -79,6 +83,8 @@ For a type not listed, use its official or most widely used formatter and linter
 - Don't leave placeholder implementations, stubbed returns, or `TODO` markers in work you call done. If you couldn't finish part of it, say so plainly.
 - **Important:** never report a deployment or service as working on the strength of a command completing. Confirm it responds correctly first (for a service, a health check returning `200`).
 - If something fails after you reported it working, give a short account: why it failed, what you changed, how you re-verified, and what's still uncertain.
+- "Complete the change" means do all of these, in order: commit the work to the current branch, push it to GitHub, open a pull request to `main`, merge it, switch to `main` and pull, then delete the working branch locally and on GitHub. Saying it is my approval (`AGENTS.md` §7) for that merge to `main` and that branch deletion, for this change only.
+- Before merging, the usual checks must pass (tests, linters, the diff scan for secrets). If any step fails — a check, a hook, a merge conflict — stop and tell me; don't force it through.
 
 ## 6. Version control
 
