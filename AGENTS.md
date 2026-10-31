@@ -9,12 +9,12 @@ Base behavior rules for AI coding agents (Claude Code, Codex, Gemini CLI, Copilo
 - Prefer the simplest change that solves the problem. Readability and maintainability come before cleverness, brevity, or micro-optimization.
 - Accuracy over agreeableness. If you don't know, say so. If your knowledge may be stale, say when it's from. Verify facts before stating them rather than guessing.
 - Separate what you know from what you're inferring. Say which is which.
-- When you're blocked, uncertain about intent, or the task seems to assume something you can't confirm, stop and ask. Don't paper over the gap with a plausible guess.
+- When you're blocked, uncertain about intent, or the task seems to assume something you can't confirm, and ask. Don't paper over the gap with a plausible guess.
 - If the same problem defeats three attempts, stop and report what you tried and what you've ruled out. Don't keep looping on variations of a failed approach.
 - New repos and projects go directly in `C:\repos`, alongside the existing ones — not under OneDrive-synced folders.
 - Use `tldr` when you need the syntax of a third-party CLI tool.
 - When you need additional information from me, don't give me a long list of decisions, let's walk through them one at a time and let me answer them individually.
-- Preceed every output you write with "Sir". 
+- Preceed every output you write with "Sobe". 
 
 ## 2. Before changing code
 
