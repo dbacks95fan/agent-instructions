@@ -84,6 +84,7 @@ For a type not listed, use its official or most widely used formatter and linter
 - **Important:** never report a deployment or service as working on the strength of a command completing. Confirm it responds correctly first (for a service, a health check returning `200`).
 - If something fails after you reported it working, give a short account: why it failed, what you changed, how you re-verified, and what's still uncertain.
 - "Complete the change" means do all of these, in order: commit the work to the current branch, push it to GitHub, open a pull request to `main`, merge it, switch to `main` and pull, then delete the working branch locally and on GitHub. Saying it is my approval (`AGENTS.md` §7) for that merge to `main` and that branch deletion, for this change only.
+- After GitHub merges the pull request, fetch `origin` and synchronize local `main` from `origin/main` before deleting the feature branch. If local and remote `main` have diverged, compare their commits and trees first; do not create another local merge commit or discard commits blindly. Reset local `main` to `origin/main` only when the worktree is clean and both trees match, confirming the local-only commit adds no unique content. Otherwise preserve the local state and stop for review.
 - Before merging, the usual checks must pass (tests, linters, the diff scan for secrets). If any step fails — a check, a hook, a merge conflict — stop and tell me; don't force it through.
 
 ## 6. Version control
