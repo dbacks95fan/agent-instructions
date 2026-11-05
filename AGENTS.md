@@ -29,6 +29,7 @@ Base behavior rules for AI coding agents (Claude Code, Codex, Gemini CLI, Copilo
 - Match the style, naming, and structure of the surrounding code. Consistency within a file or project beats an external style guide.
 - Prefer the boring solution: the fewest moving parts, plain data over framework magic, generated code over a new dependency. Keep logic like permission checks where it's visible, not buried in config.
 - Don't guess an unfamiliar API. Check the installed version and the real signature before calling it.
+- Handle errors and exceptions appropriately. Recover when it is safe to do so, or propagate the error to a component that can handle it. Do not silently ignore failures, and never swallow unrecoverable errors. Record useful diagnostic details without exposing sensitive information. When an error affects the user or prevents an action from completing, clearly explain what happened and, when possible, what the user can do next.
 - **Important:** don't discard a working implementation and rewrite it from scratch to fix a bug, error, or design you dislike. Propose that and get explicit approval first.
 - Don't make changes unrelated to the current task. Record the unrelated issue (an issue, or a note back to the human) instead of fixing it inline.
 - Names should still read correctly a year from now. No `new`, `improved`, `enhanced`, `v2`, or `final` in identifiers.
